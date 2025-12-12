@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="main-header">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="certifications.html">Certificate</a></li>
+        <li><a href="photo.html">Photo Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <div class="hero-content">
+      <h1>Johanah Reena Diaz</h1>
+      <p>A Web UI/UX Designer</p>
+      <a href="#about-me" class="about-me">Who's Johanah?</a>
+    </div>
+  </section>
+
+  <section id="about-me">
+    <div class="about-container">
+      <div class="profile-picture">
+        <img src="images/profile.jpg" alt="Johanah Reena Diaz">
+      </div>
+      <div class="about-content">
+        <h2>Hello, I'm <span>Johanah Diaz</span><br>
+        <span class="span2">UI/UX Designer</span></h2>
+
+        <p>
+          Hello! I'm Johanah, a passionate Web UI/UX Designer. I specialize in creating visually appealing and user-friendly interfaces.
+          I enjoy designing websites and applications that not only look great but also provide a seamless experience for the user.
+          I am constantly learning new tools and improving my skills to stay updated with the latest design trends.
+        </p>
+      </div>
+    </div>
+  </section>
+
+<script>
+document.querySelector(".about-me").addEventListener("click", function(e) {
+  e.preventDefault();
+
+  const aboutSection = document.querySelector("#about-me");
+
+  aboutSection.classList.add("reveal-slide");
+
+  aboutSection.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+
+  setTimeout(() => {
+    aboutSection.classList.remove("reveal-slide");
+  }, 1200);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Certificates — Johanah Diaz</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="cert-gallery.css">
+</head>
+<body>
+
+
+  <header class="site-header">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a class="active" href="certificates.html">Certificates</a></li>
+        <li><a href="photo.html">Photo Gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+
+    <section class="cert-hero">
+      <div class="cert-hero-inner">
+        <h1>CERTIFICATE</h1>
+        <p>Cebu–Bohol Educational Tour 2025</p>
+      </div>
+    </section>
+
+
+    <section class="certs-section">
+      <div class="certs-grid">
+
+        <article class="certificate-card">
+          <div class="certificate-bg" style="background-image: url('images/cert-bg-1.jpg')"></div>
+
+          <div class="certificate-frame">
+            
+            <div class="certificate-left">
+              <img class="certificate-feature" src="images/certificate.jpg" alt="Certificate Feature">
+            </div>
+
+            <div class="certificate-right">
+              <h2>Certificate of Completion</h2>
+              <p class="cert-meta">Cebu–Bohol Educational Tour • 2025</p>
+
+              <div class="cert-body">
+                <p class="presented">Presented to</p>
+                <h3 class="recipient">Johanah Reena Diaz</h3>
+                <p class="for">For active participation and outstanding engagement during the Cebu–Bohol Educational Tour 2025.</p>
+              </div>
+
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".certificate-card");
+
+  const observer = new IntersectionObserver((items) => {
+    items.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach((card) => observer.observe(card));
+});
+</script>
+
+</body>
+</html>

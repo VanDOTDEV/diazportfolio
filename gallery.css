@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #7d00b8, #1f0042);
+  color: #fff;
+  padding-top: 90px;
+}
+
+
+.site-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  padding: 20px 0;
+  z-index: 1000;
+
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 2px solid rgba(255, 0, 255, 0.25);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+nav a.active,
+nav a:hover {
+  color: #ff00ff;
+}
+
+.gallery-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  border-radius: 20px;
+
+  animation: fadeInDown 1.2s ease-out;
+}
+
+.gallery-hero-inner {
+  text-align: center;
+}
+
+.gallery-hero-inner h1 {
+  font-size: 55px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.gallery-hero-inner p {
+  opacity: 0.9;
+  font-size: 20px;
+}
+
+
+.masonry {
+  column-count: 4;
+  column-gap: 15px;
+  max-width: 3000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.masonry-item {
+  margin-bottom: 15px;
+  break-inside: avoid;
+  overflow: hidden;
+
+  border-radius: 15px;
+  background: rgba(255,255,255,0.08);
+  border: 2px solid rgba(255, 0, 255, 0.25);
+
+  box-shadow: 0 0 25px rgba(255, 0, 255, 0.2);
+  transition: 0.3s ease;
+}
+
+
+.masonry-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 40px #ff00ff;
+}
+
+.masonry-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: 0.3s ease;
+}
+
+.masonry-item:hover img {
+  transform: scale(1.1);
+}
+
+
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 1200px) {
+  .masonry { column-count: 3; }
+}
+@media (max-width: 900px) {
+  .masonry { column-count: 2; }
+}
+@media (max-width: 600px) {
+  .masonry { column-count: 1; }
+}

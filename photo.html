@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Gallery — Johanah Diaz</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="journal.html">Journal</a></li>
+      <li><a href="certifications.html">Certificates</a></li>
+      <li><a class="active" href="photo.html">Photo Gallery</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="gallery-hero">
+  <div class="gallery-hero-inner">
+    <h1>PHOTO GALLERY</h1>
+    <p>Cebu–Bohol Educational Tour 2025</p>
+  </div>
+</section>
+
+
+<section class="gallery-section">
+  <div class="masonry">
+
+    <div class="masonry-item scroll-animate"><img src="images/img1.jpg"></div>
+    <div class="masonry-item scroll-animate"><img src="images/img2.jpg"></div>
+    <div class="masonry-item scroll-animate"><img src="images/img3.jpg"></div>
+    <div class="masonry-item scroll-animate"><img src="images/img4.jpg"></div>
+    <div class="masonry-item scroll-animate"><img src="images/img5.jpg"></div>
+    <div class="masonry-item scroll-animate"><img src="images/img11.jpg"></div>
+    <div class="masonry-item scroll-animate"><img src="images/img7.jpg"></div>
+    <div class="masonry-item scroll-animate"><img src="images/img8.jpg"></div>
+    <div class="masonry-item scroll-animate"><img src="images/img9.jpg"></div>
+    <div class="masonry-item scroll-animate"><img src="images/img10.jpg"></div>
+    <div class="masonry-item scroll-animate"><img src="images/img12.jpg"></div>
+    <div class="masonry-item scroll-animate"><img src="images/img13.jpg"></div>
+    <div class="masonry-item scroll-animate"><img src="images/dynata.jpg"></div>
+    <div class="masonry-item scroll-animate"><img src="images/tarsier.jpg"></div>
+    <div class="masonry-item scroll-animate"><img src="images/upcebu.jpg"></div>
+    <div class="masonry-item scroll-animate"><img src="images/image11.jpg"></div>
+     <div class="masonry-item scroll-animate"><img src="images/img9.jpg"></div>
+
+  </div>
+</section>
+
+<script>
+
+const animatedItems = document.querySelectorAll(".scroll-animate");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.2 });
+
+animatedItems.forEach(item => observer.observe(item));
+
+
+
+document.addEventListener("mousemove", (e) => {
+  let x = (e.clientX / window.innerWidth - 0.5) * 15;
+  let y = (e.clientY / window.innerHeight - 0.5) * 15;
+
+  document.querySelectorAll(".masonry-item img").forEach(img => {
+    img.style.transform = `translate(${x}px, ${y}px) scale(1.1)`;
+  });
+});
+
+document.addEventListener("mouseleave", () => {
+  document.querySelectorAll(".masonry-item img").forEach(img => {
+    img.style.transform = "translate(0,0) scale(1)";
+  });
+});
+</script>
+
+</body>
+</html>
