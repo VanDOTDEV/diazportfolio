@@ -12,8 +12,8 @@ body {
     background-attachment: fixed;
     min-height: 100vh;
     overflow-x: hidden;
-    padding-top: 90px;
 }
+
 
 .site-header {
     position: fixed;
@@ -22,6 +22,7 @@ body {
     left: 0;
     padding: 20px 0;
     z-index: 1000;
+
     backdrop-filter: blur(12px);
     background: rgba(255, 255, 255, 0.06);
     border-bottom: 2px solid rgba(255, 0, 255, 0.25);
@@ -47,12 +48,12 @@ nav a:hover {
     color: #ff00ff;
 }
 
+
 .cert-hero {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 140px 20px 80px;
-    min-height: 250px;
+    padding: 140px 20px 40px;
     animation: fadeInDown 1.2s ease-out;
 }
 
@@ -63,38 +64,29 @@ nav a:hover {
 .cert-hero-inner h1 {
     font-size: 55px;
     font-weight: 700;
-    color: #ffffff;
 }
 
 .cert-hero-inner p {
     font-size: 20px;
     opacity: 0.9;
-    margin-top: 5px;
 }
-
 
 .certs-section {
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 30px 20px 80px;
+    padding: 20px 20px 60px;
 }
-
-.certs-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-}
-
 
 .certificate-card {
     position: relative;
-    border-radius: 22px;
     background: rgba(255, 255, 255, 0.06);
     border: 2px solid rgba(255, 0, 255, 0.35);
     box-shadow: 0 0 30px rgba(255, 0, 255, 0.25);
     backdrop-filter: blur(12px);
-    overflow: hidden;
-    padding: 30px;
+    border-radius: 25px;
+    padding: 35px;
+    text-align: center;
+
     opacity: 0;
     transform: translateY(60px) scale(0.95);
     transition: opacity 1s ease, transform 1s ease;
@@ -106,68 +98,47 @@ nav a:hover {
 }
 
 
-.certificate-bg {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    filter: blur(18px) brightness(0.5);
-    opacity: 0.35;
-    z-index: 0;
-}
-
-
-.certificate-frame {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-    z-index: 5;
-    position: relative;
-}
-
-
-.certificate-left {
-    flex: 0 0 40%;
-}
-
 .certificate-feature {
-    width: 100%;
-    border-radius: 20px;
+    width: 500px;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 15px;
     box-shadow: 0 0 25px rgba(255, 0, 255, 0.35);
     cursor: pointer;
     transition: 0.3s ease;
 }
 
 .certificate-feature:hover {
-    transform: scale(1.05);
+    transform: scale(1.04);
     box-shadow: 0 0 40px #ff00ff;
 }
 
-
+/* TEXT BELOW */
 .certificate-right {
-    flex: 1;
+    margin-top: 25px;
 }
 
 .certificate-right h2 {
-    font-size: 28px;
+    font-size: 32px;
     color: #ff00ff;
     margin-bottom: 8px;
 }
 
 .cert-meta {
-    font-size: 14px;
+    font-size: 15px;
     opacity: 0.8;
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 }
 
 .presented {
-    font-size: 15px;
+    font-size: 16px;
     opacity: 0.9;
 }
 
 .recipient {
-    font-size: 30px;
+    font-size: 36px;
     font-weight: 700;
+    margin: 10px 0;
 }
 
 .for {
@@ -180,10 +151,13 @@ nav a:hover {
 .modal {
     position: fixed;
     inset: 0;
+
     display: none;
     place-items: center;
+
     background: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(10px);
+
     opacity: 0;
     pointer-events: none;
     transition: 0.3s;
@@ -205,20 +179,18 @@ nav a:hover {
     width: 100%;
     max-height: 80vh;
     border-radius: 12px;
-    box-shadow: 0 0 30px rgba(255, 0, 255, 0.4);
 }
 
 .modal-close {
     position: absolute;
     top: -10px;
     right: -5px;
-    background: transparent;
+    background: none;
     border: none;
     font-size: 45px;
-    color: #fff;
+    color: white;
     cursor: pointer;
 }
-
 
 @keyframes fadeInDown {
     0% { opacity: 0; transform: translateY(-40px); }
@@ -227,39 +199,25 @@ nav a:hover {
 
 
 @media (max-width: 900px) {
-    .certificate-frame {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .certificate-left {
-        width: 100%;
-    }
-
     .certificate-feature {
         max-height: 350px;
-        object-fit: cover;
     }
-
     .recipient {
-        font-size: 24px;
+        font-size: 28px;
     }
 }
 
 @media (max-width: 500px) {
     .cert-hero-inner h1 {
-        font-size: 38px;
+        font-size: 40px;
     }
-
     nav a {
         font-size: 15px;
     }
-
     .certificate-right h2 {
-        font-size: 22px;
+        font-size: 25px;
     }
-
     .recipient {
-        font-size: 20px;
+        font-size: 22px;
     }
 }
